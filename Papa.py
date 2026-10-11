@@ -1875,6 +1875,7 @@ def main():
         allow_reentry=True,
     )
 
+    app.add_handler(CallbackQueryHandler(request_access, pattern=r"^REQUEST_ACCESS$"))
     app.add_handler(CallbackQueryHandler(admin_panel_callback, pattern=r"^(ADM_|APPROVE:|REJ:|BANREQ:).*"))
     app.add_handler(conv_handler)
     # Handles the owner's day count after APPROVE when the owner is not inside
